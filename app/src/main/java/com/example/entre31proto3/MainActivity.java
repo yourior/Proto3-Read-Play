@@ -106,12 +106,12 @@ public class MainActivity extends AppCompatActivity
 
     public static final String Extra_Message = "com.example.myfirstapp.MESSAGE";
     
-    public void sendMessage(View view)
-    {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(Extra_Message, message);
-        startActivity(intent);
-    }
+//    public void sendMessage(View view)
+//    {
+//        Intent intent = new Intent(this, DisplayMessageActivity.class);
+//        EditText editText = (EditText) findViewById(R.id.editText);
+//        String message = editText.getText().toString();
+//        intent.putExtra(Extra_Message, message);
+//        startActivity(intent);
+//    }
 }
