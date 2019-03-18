@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">entre 3+1 proto 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="UserName">User Name</string>
+    <string name="InGame_Money">Credit Value</string>
+    <string name="Setting_Button">Setting</string>
+    <string name="Basket_Button">Basket</string>
+    <string name="recommended_title">Recommended for ()</string>
+</resources>
