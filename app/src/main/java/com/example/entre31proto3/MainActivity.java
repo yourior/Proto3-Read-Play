@@ -85,19 +85,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-//        if (id == R.id.nav_camera) {
-//            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
+        if (id == R.id.Setting_Button) {
+          MoveLayoutOnly();
+        } else if (id == R.id.Basket_Button) {
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -106,12 +98,10 @@ public class MainActivity extends AppCompatActivity
 
     public static final String Extra_Message = "com.example.myfirstapp.MESSAGE";
     
-//    public void sendMessage(View view)
-//    {
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.editText);
-//        String message = editText.getText().toString();
-//        intent.putExtra(Extra_Message, message);
-//        startActivity(intent);
-//    }
+    public void MoveLayoutOnly()
+    {
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+
+        startActivity(intent);
+    }
 }

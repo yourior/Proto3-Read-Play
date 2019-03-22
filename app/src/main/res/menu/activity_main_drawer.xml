@@ -5,9 +5,11 @@
 
     tools:showIn="navigation_view">
     <item
+        android:id="@+id/Setting_Button"
         android:icon="@drawable/setting_logo"
         android:title="@string/Setting_Button" />
     <item
+        android:id="@+id/Basket_Button"
         android:icon="@drawable/basket_logo"
         android:title="@string/Basket_Button" />
 </menu>
