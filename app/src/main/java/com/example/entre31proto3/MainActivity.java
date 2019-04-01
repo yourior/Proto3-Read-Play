@@ -1,5 +1,6 @@
 package com.example.entre31proto3;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -87,9 +88,19 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.Setting_Button) {
-          MoveLayoutOnly();
+
+            Intent intent = new Intent(this, DisplayMessageActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.Basket_Button) {
 
+            Intent intent = new Intent(this, Basket.class);
+            startActivity(intent);
+
+        }else if(id == R.id.LogIn_Button)
+        {
+            Intent intent = new Intent(this, LogIn.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -99,10 +110,10 @@ public class MainActivity extends AppCompatActivity
 
     public static final String Extra_Message = "com.example.myfirstapp.MESSAGE";
     
-    public void MoveLayoutOnly()
-    {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-
-        startActivity(intent);
-    }
+//    public void MoveLayoutOnly()
+//    {
+//        Intent intent = new Intent(this, DisplayMessageActivity.class);
+//
+//        startActivity(intent);
+//    }
 }

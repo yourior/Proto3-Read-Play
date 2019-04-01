@@ -12,4 +12,7 @@
         android:id="@+id/Basket_Button"
         android:icon="@drawable/basket_logo"
         android:title="@string/Basket_Button" />
+    <item
+        android:id="@+id/LogIn_Button"
+        android:title="@string/LogIn" />
 </menu>

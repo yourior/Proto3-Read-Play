@@ -10,4 +10,10 @@
     <string name="Setting_Button">Setting</string>
     <string name="Basket_Button">Basket</string>
     <string name="recommended_title">Recommended for ()</string>
+    <string name="LogIn">Log In</string>
+    <string name="Home_Catalog">Home</string>
+    <string name="Register_Button">Register</string>
+    <string name="UserName_Hint">Username</string>
+    <string name="Password_Hint">Password</string>
+    <string name="Confirm_PassWord_Hint">Confirm Password</string>
 </resources>
