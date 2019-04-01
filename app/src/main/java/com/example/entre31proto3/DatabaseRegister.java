@@ -48,15 +48,16 @@ public class DatabaseRegister extends SQLiteOpenHelper
         String[] selectionArgs ={user , password};
         Cursor cursor = db.query(Table_Name,columns,selection,selectionArgs,null,null,null);
         int count =cursor.getCount();
-        db.close();;
+        db.close();
 
         if(count>0)
         {
             return true;
-        }else if(count <= 0)
+        }else
         {
             return false;
         }
+
     }
 
 
