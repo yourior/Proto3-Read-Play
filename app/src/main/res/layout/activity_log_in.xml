@@ -47,21 +47,21 @@
         android:ems="10"
         android:hint="@string/Password_Hint"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/Login_Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Username_Login"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Login_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="40dp"
-        android:onClick="Login"
+        android:onClick="login"
         android:text="@string/LogIn"
         app:layout_constraintBottom_toTopOf="@+id/Register_Button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,5 +83,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/Login_Button" />
 </android.support.constraint.ConstraintLayout>
