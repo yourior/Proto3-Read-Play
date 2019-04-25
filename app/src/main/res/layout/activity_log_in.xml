@@ -21,7 +21,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
-        android:id="@+id/Username_Login"
+        android:id="@+id/Email_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toTopOf="@+id/Login_Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Username_Login"
+        app:layout_constraintTop_toBottomOf="@+id/Email_Login"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button

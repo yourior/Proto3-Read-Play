@@ -24,32 +24,28 @@
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_light"
-        app:layout_constraintBottom_toTopOf="@+id/Username_Login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Username_Login"
+        android:id="@+id/Email_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
         android:ems="10"
-        android:hint="@string/UserName_Hint"
+        android:hint="@string/Email"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/Password_Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Info2" />
+        app:layout_constraintTop_toBottomOf="@+id/Username_Register" />
 
     <EditText
         android:id="@+id/Password_Login"
@@ -58,14 +54,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="@string/Password_Hint"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/Confirm_Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Username_Login" />
+        app:layout_constraintTop_toBottomOf="@+id/Email_Login" />
 
     <EditText
         android:id="@+id/Confirm_Password"
@@ -74,11 +68,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="@string/Confirm_PassWord_Hint"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/Register_Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Password_Login" />
@@ -88,14 +80,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="register"
         android:text="@string/Register_Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Confirm_Password" />
+
+    <EditText
+        android:id="@+id/Username_Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/UserName_Hint"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Info2" />
 
 </android.support.constraint.ConstraintLayout>

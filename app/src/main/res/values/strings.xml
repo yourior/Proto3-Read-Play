@@ -16,4 +16,5 @@
     <string name="UserName_Hint">Username</string>
     <string name="Password_Hint">Password</string>
     <string name="Confirm_PassWord_Hint">Confirm Password</string>
+    <string name="Email">Email</string>
 </resources>

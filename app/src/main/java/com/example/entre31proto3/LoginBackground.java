@@ -21,6 +21,7 @@ public class LoginBackground  extends AsyncTask<String,Void,String>  {
 
     LogIn log = new LogIn();
     Context context;
+    //int LogOrReg;
     AlertDialog alertDialog;
     LoginBackground (Context ctx) {
         context = ctx;
@@ -28,22 +29,25 @@ public class LoginBackground  extends AsyncTask<String,Void,String>  {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-
+        //LogOrReg =1;
+        Log.d("Pesan3","masuk");
         String login_url = "http://read-play.id/Login.php";
+        String register_url = "http://read-play.id/Register.php";
         //103.129.220.250
         if(type.equals("login")) {
+            //LogOrReg =1;
             try {
                 String email = params[1];
                 String password = params[2];
 
-                Log.d("Pesan3","");
+                Log.d("Pesan3","login");
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
-                Log.d("Pesan2","" +" : ["+email+"] , ["+password+"]");
+                //Log.d("Pesan2","" +" : ["+email+"] , ["+password+"]");
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
                 String post_data = URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"
                         +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
@@ -58,13 +62,59 @@ public class LoginBackground  extends AsyncTask<String,Void,String>  {
 
                 //Log.d("Pesan4","" + bufferedReader.readLine());
                 while((line = bufferedReader.readLine())!= null) {
-                    Log.d("Pesan1","" + line);
+                    //Log.d("Pesan1","" + line);
                     result += line;
                 }
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
-                Log.d("Pesan3","" + result +" : ["+email+"] , ["+password+"]");
+                //Log.d("Pesan3","" + result +" : ["+email+"] , ["+password+"]");
+
+                return result;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                //Log.d("Pesan2",e+"");
+            } catch (IOException e) {
+                e.printStackTrace();
+                //Log.d("Pesan1",e+"");
+            }
+        }else if(type.equals("register"))
+        {
+            //LogOrReg =2;
+            try {
+                String email = params[1];
+                String password = params[2];
+                String username = params[3];
+                Log.d("Pesan3","register");
+                URL url = new URL(register_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                //Log.d("Pesan2","" +" : ["+email+"] , ["+password+"]");
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"
+                        +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&"
+                        +URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(username,"UTF-8");
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                String result="";
+                String line="";
+
+                //Log.d("Pesan4","" + bufferedReader.readLine());
+                while((line = bufferedReader.readLine())!= null) {
+                  //  Log.d("Pesan1","" + line);
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                //Log.d("Pesan3","" + result +" : ["+email+"] , ["+password+"]");
 
                 return result;
             } catch (MalformedURLException e) {
@@ -80,8 +130,10 @@ public class LoginBackground  extends AsyncTask<String,Void,String>  {
 
     @Override
     protected void onPreExecute() {
-        alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login Status");
+
+            alertDialog = new AlertDialog.Builder(context).create();
+            alertDialog.setTitle("Status");
+
     }
 
     @Override
