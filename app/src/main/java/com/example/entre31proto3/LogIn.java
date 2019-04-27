@@ -21,7 +21,7 @@ public class LogIn extends AppCompatActivity {
     private Button login;
     TextView UsernameView;
     TextView Money;
-    //private static final String URL = "http:/192.168.196.1/Entre/user_config.php";
+
 
     private RequestQueue requestQueue;
 
@@ -33,7 +33,7 @@ public class LogIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        UserName_Log =  findViewById(R.id.Email_Login);
+        UserName_Log =  findViewById(R.id.Username_Login);
         Password_Log =  findViewById(R.id.Password_Login);
         login =  findViewById(R.id.Login_Button);
         UsernameView =  findViewById(R.id.Username_View);
@@ -45,12 +45,12 @@ public class LogIn extends AppCompatActivity {
 
     public void login (View v)
     {
-        String email = UserName_Log.getText().toString();
+        String username = UserName_Log.getText().toString();
         String pass = Password_Log.getText().toString();
         String Type = "login";
 
         LoginBackground lg = new LoginBackground(this);
-        lg.execute(Type, email, pass);
+        lg.execute(Type, username, pass);
 
 
     }

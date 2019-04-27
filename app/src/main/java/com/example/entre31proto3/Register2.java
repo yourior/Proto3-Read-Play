@@ -25,7 +25,7 @@ public class Register2 extends AppCompatActivity {
         info = findViewById(R.id.Info2);
         userreg = findViewById(R.id.Username_Register);
         button = findViewById(R.id.Register_Button);
-        emailreg = findViewById(R.id.Email_Login);
+        emailreg = findViewById(R.id.Username_Login);
         passwordreg = findViewById(R.id.Password_Login);
         conpassreg = findViewById(R.id.Confirm_Password);
 

@@ -10,11 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-
+        MenuItem nav_Login;
+        View navuser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,24 +26,40 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-        //test
-//        });
 
+        //activity_main_drawer Set
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
+        //Nav_Header_Main Set
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        Menu menu = navigationView.getMenu();
+        nav_Login = menu.findItem(R.id.LogIn_Button);
+        navuser = navigationView.getHeaderView(0);
+        TextView usernameview = navuser.findViewById(R.id.Username_View);
+        TextView usercrediteview = navuser.findViewById(R.id.InAppsCredit_View);
+
+
+        if(StillLogin.getUserName(MainActivity.this).length() == 0) //cek masi login atau tidak
+        {
+            nav_Login.setTitle("Log In");
+
+            usernameview.setText("Please Login");
+            usercrediteview.setText("Credit : Coming Soon");
+        }
+        else
+        {
+            nav_Login.setTitle("Log off");
+
+            usernameview.setText(StillLogin.getUserName(this));
+            usercrediteview.setText("Credit : Coming Soon");
+        }
 
 
     }
@@ -84,6 +102,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        TextView usernameview = navuser.findViewById(R.id.Username_View);
+        TextView usercrediteview = navuser.findViewById(R.id.InAppsCredit_View);
+
+
+
         if (id == R.id.Setting_Button) {
 
             Intent intent = new Intent(this, DisplayMessageActivity.class);
@@ -96,8 +119,21 @@ public class MainActivity extends AppCompatActivity
 
         }else if(id == R.id.LogIn_Button)
         {
-            Intent intent = new Intent(this, LogIn.class);
-            startActivity(intent);
+
+            if(StillLogin.getUserName(MainActivity.this).length() == 0) //cek masi login atau tidak
+            {
+                // call Login Activity
+                Intent intent = new Intent(this, LogIn.class);
+                startActivity(intent);
+            }
+            else
+            {
+                // Log out
+                StillLogin.Logout(this);
+                usernameview.setText("Please Login");
+                usercrediteview.setText("Credit : Coming Soon");
+                nav_Login.setTitle("Log In");
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -107,10 +143,8 @@ public class MainActivity extends AppCompatActivity
 
     public static final String Extra_Message = "com.example.myfirstapp.MESSAGE";
     
-//    public void MoveLayoutOnly()
-//    {
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//
-//        startActivity(intent);
-//    }
+
+
+
+
 }

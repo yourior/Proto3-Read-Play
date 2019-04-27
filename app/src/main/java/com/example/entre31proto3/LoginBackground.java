@@ -37,7 +37,7 @@ public class LoginBackground  extends AsyncTask<String,Void,String>  {
         if(type.equals("login")) {
             //LogOrReg =1;
             try {
-                String email = params[1];
+                String username = params[1];
                 String password = params[2];
 
                 Log.d("Pesan3","login");
@@ -49,7 +49,7 @@ public class LoginBackground  extends AsyncTask<String,Void,String>  {
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 //Log.d("Pesan2","" +" : ["+email+"] , ["+password+"]");
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"
+                String post_data = URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"
                         +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
@@ -68,8 +68,11 @@ public class LoginBackground  extends AsyncTask<String,Void,String>  {
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
-                //Log.d("Pesan3","" + result +" : ["+email+"] , ["+password+"]");
-
+                Log.d("Pesan3","" + result +" : ["+username+"] , ["+password+"]");
+                if(result.equals("Login Success"))
+                {
+                    StillLogin.setUserName(context,username,"0");
+                }
                 return result;
             } catch (MalformedURLException e) {
                 e.printStackTrace();
