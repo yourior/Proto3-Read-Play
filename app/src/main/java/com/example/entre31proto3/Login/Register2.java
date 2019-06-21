@@ -1,4 +1,4 @@
-package com.example.entre31proto3;
+package com.example.entre31proto3.Login;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.entre31proto3.R;
 
 
 public class Register2 extends AppCompatActivity {

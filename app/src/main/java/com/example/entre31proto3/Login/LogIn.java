@@ -1,4 +1,4 @@
-package com.example.entre31proto3;
+package com.example.entre31proto3.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.entre31proto3.MainActivity;
+import com.example.entre31proto3.R;
 
 public class LogIn extends AppCompatActivity {
 

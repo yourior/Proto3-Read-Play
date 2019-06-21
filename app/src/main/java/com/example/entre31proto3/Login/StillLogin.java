@@ -1,4 +1,4 @@
-package com.example.entre31proto3;
+package com.example.entre31proto3.Login;
 
 import android.content.Context;
 import android.content.SharedPreferences;

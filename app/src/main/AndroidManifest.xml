@@ -22,18 +22,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".Welcome"></activity>
+        <activity android:name=".Catalog.ProductDetail" />
         <activity
-            android:name=".Register2"
+            android:name=".Login.Register2"
             android:label="@string/Register_Button"
-            android:parentActivityName=".LogIn" />
+            android:parentActivityName=".Login.LogIn" />
         <activity
             android:name=".Basket"
             android:label="@string/Basket_Button"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".LogIn"
+            android:name=".Login.LogIn"
             android:label="@string/LogIn"
             android:parentActivityName=".MainActivity" />
         <activity
