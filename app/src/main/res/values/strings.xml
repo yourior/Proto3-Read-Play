@@ -16,4 +16,7 @@
     <string name="UserName_Hint">Username</string>
     <string name="Password_Hint">Password</string>
     <string name="Confirm_PassWord_Hint">Confirm Password</string>
+    <string name="Email">Email</string>
+    <string name="log_off">Log off</string>
+    <string name="catalog">Catalog</string>
 </resources>

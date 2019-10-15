@@ -14,5 +14,8 @@
         android:title="@string/Basket_Button" />
     <item
         android:id="@+id/LogIn_Button"
-        android:title="@string/LogIn" />
+        android:enabled="true"
+        android:title="@string/LogIn"
+        android:visible="true" />
+
 </menu>
